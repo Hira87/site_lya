@@ -18,26 +18,28 @@ body { font-family: sans-serif; }
   clear: both;
 }
 
+
 /* ---- .grid-item ---- */
-/@media screen and (max-width: 600px){
+@media screen and (max-width: 600px){
   .grid-sizer,
   .grid-item {
     width: 100%;
   }
+
 }
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) and (min-width: 600px){
   .grid-sizer,
   .grid-item {
     width: 50%;
   }
 }
-@media screen and (max-width: 1440px){
+@media screen and (max-width: 1440px) and (min-width: 1024px){
   .grid-sizer,
   .grid-item {
     width: 33.333%;
   }
 }
-@media screen and (max-width: 1920px){
+@media screen and (min-width: 1440px){
   .grid-sizer,
   .grid-item {
     width: 25%;
@@ -63,5 +65,5 @@ img:hover {
   -o-transform:scale(1.25);
   transform:scale(1.25);
   z-index: 1;
-  transform-origin: right 0;
+  transform-origin: left 0;
 }
