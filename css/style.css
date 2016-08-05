@@ -8,7 +8,7 @@ body { font-family: sans-serif; }
 /* ---- grid ---- */
 
 .grid {
-  background: #DDD;
+  background: #FFF;
 }
 
 /* clear fix */
@@ -56,6 +56,7 @@ body { font-family: sans-serif; }
   width: 100%;
   -webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
+  padding: 10px;
 }
 
 img:hover {
@@ -65,5 +66,16 @@ img:hover {
   -o-transform:scale(1.25);
   transform:scale(1.25);
   z-index: 1;
+}
+
+.zoom-right img:hover {
+  transform-origin: right 0;
+}
+
+.zoom-left img:hover {
   transform-origin: left 0;
 }
+
+/*div:last-child{
+    border: 2px solid #F00;
+}*/
