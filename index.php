@@ -1,3 +1,9 @@
+<?php
+  require_once('settings.inc');
+
+  $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'root', '');
+
+ ?>
 <!DOCTYPE html>
 <html lang="fr" class="no-js">
   <head>
@@ -27,7 +33,19 @@
 
       <div class="grid">
         <div class="grid-sizer"></div>
-        <div class="grid-item">
+        <?php
+          $sql = 'SELECT * FROM images';
+          $req = $pdo->query($sql);
+          while($row = $req->fetch()) {
+            echo '<div class="grid-item">
+                    <a href="'.addslashes($row['chemin']).'" class="swipebox" title="'.pathinfo(addslashes($row['chemin']), PATHINFO_FILENAME).'">
+                      <img src="'.addslashes($row['chemin']).'" alt="'.pathinfo(addslashes($row['chemin']), PATHINFO_FILENAME).'">
+                    </a>
+                  </div>';
+          }
+          $req->closeCursor();
+        ?>
+        <!--<div class="grid-item">
           <a href="images/dartagnan.jpg" class="swipebox" title="dartagnan">
             <img src="images/dartagnan.jpg" alt="dartagnan">
           </a>
@@ -57,7 +75,7 @@
           <a href="images/dartagnan.jpg" class="swipebox" title="dartagnan">
             <img src="images/dartagnan.jpg" alt="dartagnan">
           </a>
-        </div>
+        </div>-->
       </div>
 
       <div class="container">
