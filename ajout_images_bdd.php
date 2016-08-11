@@ -14,7 +14,7 @@ catch (Exception $e)
         $req = $pdo->prepare("INSERT INTO images (chemin) VALUES (:chemin)");
         $req->execute(
                    array(
-                         "chemin" => $dir.$files[$i]
+                         "chemin" => "./photos/".$files[$i]
                         )
                      );
 
