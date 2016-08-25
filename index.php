@@ -38,7 +38,7 @@
         <div class="bord"></div>
         <div class="grid-sizer"></div>
         <?php
-          $sql = 'SELECT * FROM images limit 0,12';
+          $sql = 'SELECT * FROM images';
           $req = $pdo->query($sql);
           while($row = $req->fetch()) {
             echo '<div class="grid-item">
