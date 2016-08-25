@@ -26,20 +26,24 @@
 		<link rel="stylesheet" type="text/css" href="GoogleNexusWebsiteMenu/css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="GoogleNexusWebsiteMenu/css/component.css" />
 		<script src="GoogleNexusWebsiteMenu/js/modernizr.custom.js"></script>
+
+    <!-- lazy loader pour charger les images progressivement -->
+    <script src="js/jquery.lazyload.min.js"></script>
   </head>
   <body>
 
     <h1>&nbsp;</h1>
 
       <div class="grid">
+        <div class="bord"></div>
         <div class="grid-sizer"></div>
         <?php
-          $sql = 'SELECT * FROM images';
+          $sql = 'SELECT * FROM images limit 0,12';
           $req = $pdo->query($sql);
           while($row = $req->fetch()) {
             echo '<div class="grid-item">
-                    <a href="'.addslashes($row['chemin']).'" class="swipebox" title="'.pathinfo(addslashes($row['chemin']), PATHINFO_FILENAME).'">
-                      <img src="'.addslashes($row['chemin']).'" alt="'.pathinfo(addslashes($row['chemin']), PATHINFO_FILENAME).'">
+                    <a href="'.addslashes($row['chemin']).'" class="swipebox">
+                      <img class="lazy" data-original="'.addslashes($row['chemin']).'"  src="'.addslashes($row['chemin']).'">
                     </a>
                   </div>';
           }
@@ -97,8 +101,10 @@
 	<script>
     new gnMenu( document.getElementById( 'gn-menu' ) );
 	</script>
+  <div id="log"></div>
   </body>
   <script>
+
 
   var $grid = $('.grid').imagesLoaded( function() {
     $grid.masonry({
@@ -115,10 +121,15 @@
     //Galerie
     $( document ).ready(function() {
 
+      //lazy load
+      $("img.lazy").lazyload({
+        threshold : 200
+      });
+
+
+    
       // external js: masonry.pkgd.js, imagesloaded.pkgd.js
-
       // init Masonry after all images have loaded
-
 
 			// Basic Gallery
 			$( '.swipebox' ).swipebox();
@@ -138,6 +149,13 @@
 
 
     });
+
+    /*$( document ).on( "mousemove", function( event ) {
+      $( "#log" ).text( "pageX: " + event.pageX + ", pageY: " + event.pageY + "largeur: " + $(window).width() );
+    });*/
+
+
+
 
   </script>
 </html>
