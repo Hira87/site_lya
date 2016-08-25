@@ -101,28 +101,15 @@
 	<script>
     new gnMenu( document.getElementById( 'gn-menu' ) );
 	</script>
-  <div id="log"></div>
   </body>
   <script>
 
 
-  var $grid = $('.grid').imagesLoaded( function() {
-    $grid.masonry({
-      itemSelector: '.grid-item',
-      percentPosition: true,
-      columnWidth: '.grid-sizer'
-    });
-  });
 
-  $grid.on( 'layoutComplete', function( event, items ) {
-    modif_zoom();
-  });
 
     //Galerie
     $( document ).ready(function() {
 
-      //lazy load
-      $("img.lazy").lazyload();
 
 
 
@@ -144,7 +131,21 @@
 				] );
 			} );
 
+      //lazy load
+      $("img.lazy").lazyload();
+      $("img.lazy").load(function(){
+        var $grid = $('.grid').imagesLoaded( function() {
+          $grid.masonry({
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            columnWidth: '.grid-sizer'
+          });
+        });
 
+        $grid.on( 'layoutComplete', function( event, items ) {
+          modif_zoom();
+        });
+      });
 
     });
 
