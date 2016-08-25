@@ -43,7 +43,7 @@
           while($row = $req->fetch()) {
             echo '<div class="grid-item">
                     <a href="'.addslashes($row['chemin']).'" class="swipebox">
-                      <img class="lazy" data-original="'.addslashes($row['chemin']).'"  src="'.addslashes($row['chemin']).'">
+                      <img class="lazy" data-original="'.addslashes($row['chemin']).'">
                     </a>
                   </div>';
           }
@@ -122,12 +122,10 @@
     $( document ).ready(function() {
 
       //lazy load
-      $("img.lazy").lazyload({
-        threshold : 200
-      });
+      $("img.lazy").lazyload();
 
 
-    
+
       // external js: masonry.pkgd.js, imagesloaded.pkgd.js
       // init Masonry after all images have loaded
 
