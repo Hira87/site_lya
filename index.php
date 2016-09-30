@@ -1,4 +1,5 @@
 <?php
+  require "login/loginheader.php"; 
   //require_once('settings.inc');
 
   $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'root', '');
