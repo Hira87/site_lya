@@ -1,6 +1,7 @@
 <?php
 //DO NOT ECHO ANYTHING ON THIS PAGE OTHER THAN RESPONSE
 //'true' triggers login success
+error_reporting(0);
 ob_start();
 include 'config.php';
 require 'includes/functions.php';
