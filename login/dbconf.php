@@ -1,7 +1,7 @@
 <?php
 //DATABASE CONNECTION VARIABLES
 $host = "localhost"; // Host name
-$username = "root"; // Mysql username
+$username = "Florian"; // Mysql username
 $password = "EWapCk5yn-YcQ7)u9Q22/;@L2.78^a"; // Mysql password
 $db_name = "site_lya"; // Database name
 
