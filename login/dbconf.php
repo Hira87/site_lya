@@ -1,6 +1,6 @@
 <?php
 //DATABASE CONNECTION VARIABLES
-$host = "localhost"; // Host name
+$host = "185.45.34.129/"; // Host name
 $username = "Florian"; // Mysql username
 $password = "EWapCk5yn-YcQ7)u9Q22/;@L2.78^a"; // Mysql password
 $db_name = "site_lya"; // Database name
