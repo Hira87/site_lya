@@ -23,7 +23,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
     <h1>&nbsp;</h1>
 
       <div class="videos">
-        <video width="720" height="405" controls >
+        <video width="300" controls >
         	<source src="./videos/MAH00001.MP4" type="video/mp4">
         	Votre navigateur ne supporte pas le lecteur HTML5.
         </video>
