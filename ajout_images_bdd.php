@@ -16,7 +16,7 @@ catch (Exception $e)
         $req->execute(
                    array(
                          "chemin" => "./photos/".$files[$i],
-                         "miniature" => "./photos/thumb_".$files[$i]
+                         "miniature" => "./photos/miniatures/thumb_".$files[$i]
                         )
                      );
 
