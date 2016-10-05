@@ -23,7 +23,7 @@
     	$extension = "";
 
     //Si l'un ou l'autre est égal à 0, le redimensionnement conserve le ratio
-    $largeur = 400;
+    $largeur = 200;
     $hauteur = 0;
 
     $typeValide = array("PNG","GIF","JPEG","JPG");
