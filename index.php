@@ -39,7 +39,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
         <div class="bord"></div>
         <div class="grid-sizer"></div>
         <?php
-          $sql = 'SELECT * FROM images limit 0,50';
+          $sql = 'SELECT * FROM images limit 0,30';
           $req = $pdo->query($sql);
           while($row = $req->fetch()) {
             echo '<div class="grid-item">
@@ -91,7 +91,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
     					<div class="gn-scroller">
     						<ul class="gn-menu">
     							<li><a href="index.php" class="gn-icon gn-icon-photo">Photos</a></li>
-    							<li><a href="" class="gn-icon gn-icon-video">Vidéos (A venir)</a></li>
+    							<li><a href="video.php" class="gn-icon gn-icon-video">Vidéos (A venir)</a></li>
     						</ul>
     				</nav>
     			</li>
