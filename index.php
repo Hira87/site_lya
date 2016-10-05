@@ -90,8 +90,8 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
     				<nav class="gn-menu-wrapper">
     					<div class="gn-scroller">
     						<ul class="gn-menu">
-    							<li><a href="rdv.php" class="gn-icon gn-icon-rdv">Images</a></li>
-    							<li><a href="map.php" class="gn-icon gn-icon-earth">Vidéos</a></li>
+    							<li><a href="index.php" class="gn-icon gn-icon-photo">Images</a></li>
+    							<li><a href="" class="gn-icon gn-icon-video">Vidéos (A venir)</a></li>
     						</ul>
     				</nav>
     			</li>

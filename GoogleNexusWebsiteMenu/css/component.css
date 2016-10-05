@@ -230,12 +230,12 @@ input.gn-search:focus {
 		content: "\e000"
 }
 
-.gn-icon-earth::before {
-		content: url("carte.png");
+.gn-icon-video::before {
+		content: url("video.png");
 }
 
-.gn-icon-rdv::before {
-		content: url("rendez_vous.png");
+.gn-icon-photo::before {
+		content: url("photo.png");
 }
 
 .gn-icon-cog::before {
