@@ -43,7 +43,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
           $req = $pdo->query($sql);
           while($row = $req->fetch()) {
             echo '<div class="grid-item">
-                    <a href="'.addslashes($row['miniature']).'" class="swipebox">
+                    <a href="'.addslashes($row['chemin']).'" class="swipebox">
                       <img class="lazy" data-original="'.addslashes($row['miniature']).'">
                     </a>
                   </div>';
