@@ -11,7 +11,7 @@
     }
   }
 
-  function redim_image($nom_fichier){
+  function redim_image($nomFichier){
     //$nomFichier = "bonheur.jpg"; //Doit être dans le même répertoire que « resize_image.php »
 
     //Obtention de l'extension du fichier
