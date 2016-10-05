@@ -7,7 +7,7 @@
   $files = scandir($dir);
   for($i=0;$i<count($files);$i++){
     if(strtolower(pathinfo($files[$i],PATHINFO_EXTENSION)) == 'jpg'){
-      redim_image($files[$i]);
+      redim_image($dir.$files[$i]);
     }
   }
 
