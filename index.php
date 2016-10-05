@@ -39,7 +39,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
         <div class="bord"></div>
         <div class="grid-sizer"></div>
         <?php
-          $sql = 'SELECT * FROM images limit 0,12';
+          $sql = 'SELECT * FROM images limit 0,100';
           $req = $pdo->query($sql);
           while($row = $req->fetch()) {
             echo '<div class="grid-item">
