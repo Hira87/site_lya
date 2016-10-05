@@ -70,7 +70,7 @@
     $imageFinale = imagecreatetruecolor($largeur, $hauteur);
     imagecopyresampled($imageFinale, $imageSource, 0, 0, 0, 0, $largeur, $hauteur, $largeurImageSource, $hauteurImageSource);
 
-    $nomFichierFinal = round($largeur) . "x" . round($hauteur) . "_" . $nomFichier;
+    $nomFichierFinal = "thumb_".$nomFichier;
     call_user_func_array("image".strtolower($extension), array($imageFinale, $nomFichierFinal, 100));
     imagedestroy($imageSource);
 
