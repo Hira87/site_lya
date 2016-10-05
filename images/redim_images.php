@@ -1,4 +1,5 @@
 <?php
+set_time_limit(0);
 
   if(!function_exists("imagecreatefrompng"))
   	die("Votre serveur ne possède pas la bibliothèque GD.");
@@ -8,7 +9,6 @@
   for($i=0;$i<count($files);$i++){
     if(strtolower(pathinfo($files[$i],PATHINFO_EXTENSION)) == 'jpg'){
       redim_image($dir,$files[$i]);
-      exit;
     }
   }
 
