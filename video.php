@@ -24,7 +24,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
 
       <div class="videos">
         <?php
-        $dir = "./videos/";
+        $dir = '/volume1/Florian/Photos/video_lya/';
         $files = scandir($dir);
         for($i=0;$i<count($files);$i++){
           if(strtolower(pathinfo($files[$i],PATHINFO_EXTENSION)) == 'mp4'){
