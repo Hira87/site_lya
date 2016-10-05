@@ -22,9 +22,18 @@
     else
     	$extension = "";
 
-    //Si l'un ou l'autre est égal à 0, le redimensionnement conserve le ratio
-    $largeur = 300;
-    $hauteur = 300;
+    list($largeur_init, $hauteur_init) = getimagesize($chemin.$nomFichier);
+    if($largeur_init>$hauteur_init){
+      //Si l'un ou l'autre est égal à 0, le redimensionnement conserve le ratio
+      $largeur = 300;
+      $hauteur = 0;
+    }else{
+      //Si l'un ou l'autre est égal à 0, le redimensionnement conserve le ratio
+      $largeur = 0;
+      $hauteur = 300;
+    }
+
+
 
     $typeValide = array("PNG","GIF","JPEG","JPG");
 
