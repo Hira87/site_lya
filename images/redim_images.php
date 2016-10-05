@@ -7,11 +7,12 @@
   $files = scandir($dir);
   for($i=0;$i<count($files);$i++){
     if(strtolower(pathinfo($files[$i],PATHINFO_EXTENSION)) == 'jpg'){
-      redim_image($dir.$files[$i]);
+      redim_image($dir,$files[$i]);
+      exit;
     }
   }
 
-  function redim_image($nomFichier){
+  function redim_image($chemin,$nomFichier){
     //$nomFichier = "bonheur.jpg"; //Doit être dans le même répertoire que « resize_image.php »
 
     //Obtention de l'extension du fichier
@@ -27,10 +28,10 @@
 
     $typeValide = array("PNG","GIF","JPEG","JPG");
 
-    if(empty($nomFichier))
+    if(empty($chemin.$nomFichier))
     	die("Impossible de trouver l'image, aucun nom spécifié.");
 
-    if(!file_exists($nomFichier))
+    if(!file_exists($chemin.$nomFichier))
     	die("L'image que vous essayez de redimensionner n'existe pas.");
 
     if(!in_array(strtoupper($extension), $typeValide))
@@ -43,7 +44,7 @@
     	$extension = "JPEG";
 
     //Création de la nouvelle image
-    $imageSource = call_user_func_array("imagecreatefrom".strtolower($extension), array($nomFichier));
+    $imageSource = call_user_func_array("imagecreatefrom".strtolower($extension), array($chemin.$nomFichier));
 
     if(!$imageSource)
     	die("Erreur, ce fichier n'est pas une image ou est corrompu.");
@@ -51,7 +52,7 @@
     //Est-ce que l'utilisateur a donné la largeur/hauteur ou est-ce que nous devons trouver hauteur/largeur ?
     if(empty($largeur) || empty($hauteur))
     {
-    	list($largeurImageSource, $hauteurImageSource) = getimagesize($nomFichier);
+    	list($largeurImageSource, $hauteurImageSource) = getimagesize($chemin.$nomFichier);
 
     	if(empty($largeur))
     	{
@@ -73,7 +74,7 @@
     call_user_func_array("image".strtolower($extension), array($imageFinale, $nomFichierFinal, 100));
     imagedestroy($imageSource);
 
-    rename($nomFichierFinal,'miniatures/'.$nomFichierFinal);
+    rename($nomFichierFinal,$chemin.'miniatures/'.$nomFichierFinal);
 
     echo "Fichier ".$nomFichierFinal." créé avec succès.";
   }
