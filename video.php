@@ -23,10 +23,18 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
     <h1>&nbsp;</h1>
 
       <div class="videos">
-        <video width="300" controls >
-        	<source src="./videos/MAH00001.MP4" type="video/mp4">
-        	Votre navigateur ne supporte pas le lecteur HTML5.
-        </video>
+        <?php
+        $dir = '/volume1/Florian/Photos/Vidéo Lya/';
+        $files = scandir($dir);
+        for($i=0;$i<count($files);$i++){
+          if(strtolower(pathinfo($files[$i],PATHINFO_EXTENSION)) == 'mp4'){
+            echo '<video width="300" controls >
+            	<source src="./videos/'.$files[$i].'" type="video/mp4">
+            	Votre navigateur ne supporte pas le lecteur HTML5.
+            </video>';
+          }
+        }
+        ?>
       </div>
 
       <div class="container">
