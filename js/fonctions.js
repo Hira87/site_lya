@@ -1,6 +1,6 @@
 function cherche_active(){
   $.each($('.pagination li a'), function(index,value){
-    console.log('div' + index + ':' + $(this).attr('id'));
+    console.log($(this).attr('class'));
   });
   //return id_active;
 }
