@@ -27,8 +27,8 @@
 		<link rel="stylesheet" type="text/css" href="GoogleNexusWebsiteMenu/css/component.css" />
 		<script src="GoogleNexusWebsiteMenu/js/modernizr.custom.js"></script>
 
-    <!-- lazy loader pour charger les images progressivement -->
-    <script src="js/jquery.lazyload.min.js"></script>
+    <!-- lazy loader pour charger les images progressivement
+    <script src="js/jquery.lazyload.min.js"></script>-->
   </head>
   <body>
 
@@ -139,8 +139,8 @@
 			} );
 
       //lazy load
-      $("img.lazy").lazyload();
-      $("img.lazy").load(function(){
+      //$("img.lazy").lazyload();
+      //$("img.lazy").load(function(){
         var $grid = $('.grid').imagesLoaded( function() {
           $grid.masonry({
             itemSelector: '.grid-item',
@@ -152,7 +152,7 @@
         $grid.on( 'layoutComplete', function( event, items ) {
           modif_zoom();
         });
-      });
+      //});
 
     });
 
