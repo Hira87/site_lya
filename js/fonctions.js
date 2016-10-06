@@ -6,13 +6,13 @@ function enleve_active(page){
       if(page == 'previous'){
         page_prec = parseInt(parseInt($(this).attr('id'))-1);
         $('#'+page_prec).addClass('active');
-        return true;
+        return false;
       }
       if(page == 'next'){
         page_suiv = parseInt(parseInt($(this).attr('id'))+1);
         $('#'+page_suiv).addClass('active');
         alert(page_suiv);
-        return true;
+        return false;
       }
     }
   });
