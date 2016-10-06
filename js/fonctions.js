@@ -1,8 +1,7 @@
-function cherche_active(page){
+function enleve_active(page){
   $.each($('.pagination li a'), function(index,value){
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
-      //console.info($(this).attr('id'));
-      return $(this).attr('id');
+      $('#'+$(this).attr('id')).removeClass('active');
     }
   });
   //return id_active;
