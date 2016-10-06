@@ -3,16 +3,10 @@ function pagine(page,limit){
       type: "POST",
       url: "/save.php",
       data: "type=pagine&page=" + page + "&limit=" + limit,
-      dataType: 'JSON',
-      success: function (html) {
-          //console.log(html.response + ' ' + html.username);
-          if (html.response === 'true') {
-              //location.assign("../index.php");
-             location.reload();
-              return html.username;
-          } else {
-              $("#message").html(html.response);
-          }
+      //dataType: 'JSON',
+      success: function (data) {
+        alert(data);
+        $("#images").html(data);
       },
       error: function (textStatus, errorThrown) {
           console.log(textStatus);

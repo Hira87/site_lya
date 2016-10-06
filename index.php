@@ -82,10 +82,11 @@
       <div class="grid">
         <div class="bord"></div>
         <div class="grid-sizer"></div>
+        <div id="images">
         <?php
           echo genere_grid_images(1,$limit)
         ?>
-
+      </div>
       </div>
 
       <div class="container">

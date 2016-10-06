@@ -5,7 +5,8 @@
   function genere_grid_images($page,$limit){
     global $pdo;
     $page--;
-    $sql = 'SELECT * FROM images limit '.$page.','.$limit;
+    $debut = $page*30;
+    $sql = 'SELECT * FROM images limit '.$debut.','.$limit;
     $req = $pdo->query($sql);
     $grid = "";
     while($row = $req->fetch()) {
