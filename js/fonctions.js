@@ -6,7 +6,6 @@ function pagine(page,limit){
       data: "type=pagine&page=" + page + "&limit=" + limit,
       //dataType: 'JSON',
       success: function (data) {
-        alert($("#"+page).attr("class"))
         $("#"+page).addClass("active");
         $("#"+page_prec).removeClass("active");
         $("#images").html(data);
