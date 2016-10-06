@@ -8,6 +8,7 @@ function enleve_active(page){
       }
       if(page == 'next'){
         page_suiv = parseInt(parseInt($(this).attr('id'))+1);
+        alert(page_suiv);
         $('#'+page_suiv).addClass('active');
       }
     }
