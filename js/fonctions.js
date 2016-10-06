@@ -1,7 +1,7 @@
 function cherche_active(page){
   $.each($('.pagination li a'), function(index,value){
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
-      console.info($(this).attr('id'));
+      //console.info($(this).attr('id'));
       return $(this).attr('id');
     }
   });
