@@ -63,7 +63,7 @@
         if($page=='' && $i==1){
             $pagination .= '<li><a href="#" class="active">'.$i.'</a></li>';
         }else{
-          $pagination .= '<li><a href="#" onclick="pagine('.$i.','.$limit.')">'.$i.'</a></li>';
+          $pagination .= '<li><a onclick="pagine('.$i.','.$limit.')">'.$i.'</a></li>';
         }
       }
 
