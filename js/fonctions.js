@@ -1,13 +1,12 @@
 function pagine(page,limit){
-  alert(page);
-  alert(limit);
   $.ajax({
       type: "POST",
       url: "save.php",
       data: "type=pagine&page=" + page + "&limit=" + limit,
       //dataType: 'JSON',
       success: function (data) {
-        alert(data);
+        //alert(data);
+        alert($("#images").html);
         $("#images").html(data);
       },
       error: function (textStatus, errorThrown) {
