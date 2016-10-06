@@ -1,14 +1,13 @@
-function cherche_active(){
+function cherche_active(page){
   $.each($('.pagination li a'), function(index,value){
-    if($(this).attr('class') == 'active'){
-      console.log($(this).attr('id'));
+    if($(this).attr('class') == 'active' && $(this).attr('id')!=page){
+      return $(this).attr('id');
     }
   });
   //return id_active;
 }
 
 function pagine(page,limit){
-  page_prec = parseInt(parseInt(page)-1);
   $.ajax({
       type: "POST",
       url: "save.php",
@@ -16,7 +15,7 @@ function pagine(page,limit){
       //dataType: 'JSON',
       success: function (data) {
         $("#"+page).addClass("active");
-        cherche_active();
+        cherche_active(page);
         //$("#"+page_prec).removeClass("active");
         $("#images").html(data);
         $("img.lazy").lazyload();
