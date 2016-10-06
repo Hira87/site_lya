@@ -1,5 +1,7 @@
 function cherche_active(){
-  console.warn($('.pagination li'));
+  $.each($('.pagination li a'), function(index,value){
+    console.log('div' + index + ':' + $(this).attr('id'));
+  });
   //return id_active;
 }
 
