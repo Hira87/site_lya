@@ -4,6 +4,7 @@ function enleve_active(page){
       $('#'+$(this).attr('id')).removeClass('active');
       if(page == 'previous'){
         page_prec = parseInt(pareseInt($(this).attr('id'))-1);
+        alert(page_prec);
         $('#'+page_prec).addClass('active');
       }
       if(page == 'next'){
