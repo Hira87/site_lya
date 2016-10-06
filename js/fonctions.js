@@ -15,7 +15,7 @@ function pagine(page,limit){
       //dataType: 'JSON',
       success: function (data) {
         $("#"+page).addClass("active");
-        cherche_active(page);
+        alert(cherche_active(page));
         //$("#"+page_prec).removeClass("active");
         $("#images").html(data);
         $("img.lazy").lazyload();
