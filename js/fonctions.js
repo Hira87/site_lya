@@ -8,6 +8,7 @@ function pagine(page,limit){
         /*alert($("#images").html());
         alert(data);*/
         $("#images").html(data);
+        modif_zoom();
       },
       error: function (textStatus, errorThrown) {
           console.log(textStatus);

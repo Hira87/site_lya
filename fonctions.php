@@ -12,7 +12,7 @@
     while($row = $req->fetch()) {
       $grid .= '<div class="grid-item">
               <a href="'.addslashes($row['chemin']).'" class="swipebox">
-                <img data-original="'.addslashes($row['miniature']).'">
+                <img class="lazy" data-original="'.addslashes($row['miniature']).'">
               </a>
             </div>';
     }
