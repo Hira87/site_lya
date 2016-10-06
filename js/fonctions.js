@@ -3,12 +3,12 @@ function enleve_active(page){
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
       $('#'+$(this).attr('id')).removeClass('active');
       if(page == 'previous'){
-        page_prec = parseInt(pareseInt($(this).attr('id'))-1);
+        page_prec = parseInt(parseInt($(this).attr('id'))-1);
         alert(page_prec);
         $('#'+page_prec).addClass('active');
       }
       if(page == 'next'){
-        page_suiv = parseInt(pareseInt($(this).attr('id'))+1);
+        page_suiv = parseInt(parseInt($(this).attr('id'))+1);
         $('#'+page_suiv).addClass('active');
       }
     }
