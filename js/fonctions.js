@@ -1,6 +1,8 @@
 function cherche_active(page){
+  console.log(page);
   $.each($('.pagination li a'), function(index,value){
-    if($(this).attr('class') == 'active' && $(this).attr('id')!=page){
+    console.info($(this).attr('class')+" && "+$(this).attr('id'));
+    if($(this).attr('class') == 'active' && $(this).attr('id') != page){
       return $(this).attr('id');
     }
   });
@@ -15,7 +17,7 @@ function pagine(page,limit){
       //dataType: 'JSON',
       success: function (data) {
         $("#"+page).addClass("active");
-        alert(cherche_active(page));
+        console.warn(cherche_active(page));
         //$("#"+page_prec).removeClass("active");
         $("#images").html(data);
         $("img.lazy").lazyload();
