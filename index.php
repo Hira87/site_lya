@@ -36,7 +36,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
     <h1>&nbsp;</h1>
 
     <?php
-      $sql_pagination = "Select count(1) from images";
+      $sql_pagination = "Select * from images";
       $res_pagination = $pdo->query($sql_pagination);
       $nb_images = $res_pagination->rowCount();
       $nb_pages = ceil($nb_images/30);
