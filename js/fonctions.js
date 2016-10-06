@@ -5,9 +5,8 @@ function pagine(page,limit){
       data: "type=pagine&page=" + page + "&limit=" + limit,
       //dataType: 'JSON',
       success: function (data) {
-        //alert(data);
-        alert($("#images").html());
-        alert(data);
+        /*alert($("#images").html());
+        alert(data);*/
         $("#images").html(data);
       },
       error: function (textStatus, errorThrown) {
