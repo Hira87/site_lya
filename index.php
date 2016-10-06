@@ -48,7 +48,8 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
         $type_pagination = "NONE";
       }
 
-      $pagination = '<ul class="pagination">';
+      $pagination = '<centrer>
+                      <ul class="pagination">';
 
       if($type_pagination == "FULL"){
         $pagination .= '<li><a href="#">&lt;&lt;</a></li>
@@ -62,7 +63,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
             $pagination .= '<li><a href="#" class="active">'.$i.'</a></li>';
         }else{
           $pagination .= '<li><a href="#">'.$i.'</a></li>';
-        }        
+        }
       }
 
       if($type_pagination == "FULL"){
@@ -72,7 +73,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
         $pagination .= '<li><a href="#">&gt;</a></li>';
       }
 
-      $pagination .='</ul>';
+      $pagination .='</ul></centrer>';
 
       echo $pagination;
     ?>
