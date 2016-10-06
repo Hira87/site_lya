@@ -56,7 +56,7 @@
         $pagination .= '<li><a id="first" onclick="pagine(1,'.$limit.')">&lt;&lt;</a></li>
                         <li><a id="previous" onclick="pagine(this.id,'.$limit.')">&lt;</a></li>';
       }else if($type_pagination == "SMALL") {
-        $pagination .= '<li><a id="previous">&lt;</a></li>';
+        $pagination .= '<li><a id="previous" onclick="pagine(this.id,'.$limit.')">&lt;</a></li>';
       }
 
       for($i=1;$i<=$nb_pages;$i++){
@@ -68,10 +68,10 @@
       }
 
       if($type_pagination == "FULL"){
-        $pagination .= '<li><a id="next">&gt;</a></li>
+        $pagination .= '<li><a id="next" onclick="pagine(this.id,'.$limit.')">&gt;</a></li>
                         <li><a id="last" onclick="pagine('.$nb_pages.','.$limit.')">&gt;&gt;</a></li>';
       }else if($type_pagination == "SMALL") {
-        $pagination .= '<li><a id="next">&gt;</a></li>';
+        $pagination .= '<li><a id="next" onclick="pagine(this.id,'.$limit.')">&gt;</a></li>';
       }
 
       $pagination .='</ul></div>';
