@@ -58,7 +58,11 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
       }
 
       for($i=1;$i<=$nb_pages;$i++){
-        $pagination .= '<li><a href="#">'.$i.'</a></li>';
+        if($page=='' && $i==1){
+            $pagination .= '<li><a href="#" class="active">'.$i.'</a></li>';
+        }else{
+          $pagination .= '<li><a href="#">'.$i.'</a></li>';
+        }        
       }
 
       if($type_pagination == "FULL"){
