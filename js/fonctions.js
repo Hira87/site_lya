@@ -1,3 +1,8 @@
+function cherche_active(){
+  console.warn($('.pagination li'));
+  //return id_active;
+}
+
 function pagine(page,limit){
   page_prec = parseInt(parseInt(page)-1);
   $.ajax({
@@ -7,7 +12,7 @@ function pagine(page,limit){
       //dataType: 'JSON',
       success: function (data) {
         $("#"+page).addClass("active");
-        $("#"+page_prec).removeClass("active");
+        //$("#"+page_prec).removeClass("active");
         $("#images").html(data);
         $("img.lazy").lazyload();
         $("img.lazy").load(function(){
