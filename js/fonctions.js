@@ -1,5 +1,5 @@
 function cherche_active(){
-  alert($('.pagination li'));
+  console.warn($('.pagination li'));
   //return id_active;
 }
 
