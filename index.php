@@ -48,7 +48,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
         $type_pagination = "NONE";
       }
 
-      $pagination = '<centrer>
+      $pagination = '<div class="center">
                       <ul class="pagination">';
 
       if($type_pagination == "FULL"){
@@ -73,7 +73,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
         $pagination .= '<li><a href="#">&gt;</a></li>';
       }
 
-      $pagination .='</ul></centrer>';
+      $pagination .='</ul></div>';
 
       echo $pagination;
     ?>
