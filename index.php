@@ -1,6 +1,6 @@
 <?php
   require "login/loginheader.php";
-  //require_once('settings.inc');
+  require_once('fonctions.php');
 //connexion BDD
 $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ7)u9Q22/;@L2.78^a');
 
@@ -36,10 +36,12 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
     <h1>&nbsp;</h1>
 
     <?php
+      $limit = 30;
       $sql_pagination = "Select * from images";
       $res_pagination = $pdo->query($sql_pagination);
       $nb_images = $res_pagination->rowCount();
-      $nb_pages = ceil($nb_images/30);
+      $res_pagination->closeCursor();
+      $nb_pages = ceil($nb_images/$limit);
       if($nb_pages>2){
         $type_pagination = "FULL";
       }else if($nb_pages>1){
@@ -82,48 +84,9 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
         <div class="bord"></div>
         <div class="grid-sizer"></div>
         <?php
-          $sql = 'SELECT * FROM images limit 0,30';
-          $req = $pdo->query($sql);
-          while($row = $req->fetch()) {
-            echo '<div class="grid-item">
-                    <a href="'.addslashes($row['chemin']).'" class="swipebox">
-                      <img class="lazy" data-original="'.addslashes($row['miniature']).'">
-                    </a>
-                  </div>';
-          }
-          $req->closeCursor();
+          echo genere_grid_images(1,$limit)
         ?>
-        <!--<div class="grid-item">
-          <a href="images/dartagnan.jpg" class="swipebox" title="dartagnan">
-            <img src="images/dartagnan.jpg" alt="dartagnan">
-          </a>
-        </div>
-        <div id="tipi" class="grid-item">
-          <img src="images/tipi.jpg"/>
-        </div>
-        <div id="nous3" class="grid-item">
-          <img src="images/nous3.jpg"/>
-        </div>
-        <div id="coccinelle" class="grid-item">
-          <img src="images/coccinelle.jpg" />
-        </div>
-        <div id="mariniere" class="grid-item">
-          <img src="images/mariniere.jpg" />
-        </div>
-        <div id="montage" class="grid-item">
-          <img src="images/montage.jpg" />
-        </div>
-        <div id="bonheur" class="grid-item">
-          <img src="images/bonheur.jpg" />
-        </div>
-        <div id="alinea" class="grid-item">
-          <img src="images/alinea.jpg" />
-        </div>
-        <div id="dartagnan" class="grid-item">
-          <a href="images/dartagnan.jpg" class="swipebox" title="dartagnan">
-            <img src="images/dartagnan.jpg" alt="dartagnan">
-          </a>
-        </div>-->
+
       </div>
 
       <div class="container">
