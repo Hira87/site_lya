@@ -5,11 +5,12 @@ function enleve_active(page){
       if(page == 'previous'){
         page_prec = parseInt(parseInt($(this).attr('id'))-1);
         $('#'+page_prec).addClass('active');
+        return;
       }
       if(page == 'next'){
         page_suiv = parseInt(parseInt($(this).attr('id'))+1);
-        alert(page_suiv);
         $('#'+page_suiv).addClass('active');
+        return;
       }
     }
   });
