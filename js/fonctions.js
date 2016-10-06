@@ -1,7 +1,9 @@
 function pagine(page,limit){
+  alert(page);
+  alert(limit);
   $.ajax({
       type: "POST",
-      url: "/save.php",
+      url: "save.php",
       data: "type=pagine&page=" + page + "&limit=" + limit,
       //dataType: 'JSON',
       success: function (data) {
