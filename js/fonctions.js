@@ -1,9 +1,7 @@
 function cherche_active(page){
-  console.log(page);
   $.each($('.pagination li a'), function(index,value){
-    console.info($(this).attr('class')+" && "+$(this).attr('id'));
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
-      alert($(this).attr('id'));
+      console.info($(this).attr('id'));
       return $(this).attr('id');
     }
   });
@@ -18,7 +16,7 @@ function pagine(page,limit){
       //dataType: 'JSON',
       success: function (data) {
         $("#"+page).addClass("active");
-        console.warn(cherche_active(page));
+        alert(cherche_active(page));
         //$("#"+page_prec).removeClass("active");
         $("#images").html(data);
         $("img.lazy").lazyload();
