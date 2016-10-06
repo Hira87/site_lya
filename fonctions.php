@@ -3,6 +3,7 @@
   $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ7)u9Q22/;@L2.78^a');
 
   function genere_grid_images($page,$limit){
+    global $pdo;
     $page--;
     $sql = 'SELECT * FROM images limit '.$page.','.$limit;
     $req = $pdo->query($sql);
