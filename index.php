@@ -53,25 +53,25 @@
                       <ul class="pagination">';
 
       if($type_pagination == "FULL"){
-        $pagination .= '<li><a href="#">&lt;&lt;</a></li>
-                        <li><a href="#">&lt;</a></li>';
+        $pagination .= '<li><a id="first">&lt;&lt;</a></li>
+                        <li><a id="previous">&lt;</a></li>';
       }else if($type_pagination == "SMALL") {
-        $pagination .= '<li><a href="#">&lt;</a></li>';
+        $pagination .= '<li><a id="previous">&lt;</a></li>';
       }
 
       for($i=1;$i<=$nb_pages;$i++){
         if($page=='' && $i==1){
-            $pagination .= '<li><a href="#" class="active">'.$i.'</a></li>';
+            $pagination .= '<li><a id="'.$i.'" class="active">'.$i.'</a></li>';
         }else{
-          $pagination .= '<li><a onclick="pagine('.$i.','.$limit.')">'.$i.'</a></li>';
+          $pagination .= '<li><a id="'.$i.'" onclick="pagine('.$i.','.$limit.')">'.$i.'</a></li>';
         }
       }
 
       if($type_pagination == "FULL"){
-        $pagination .= '<li><a href="#">&gt;</a></li>
-                        <li><a href="#">&gt;&gt;</a></li>';
+        $pagination .= '<li><a id="next">&gt;</a></li>
+                        <li><a id="last">&gt;&gt;</a></li>';
       }else if($type_pagination == "SMALL") {
-        $pagination .= '<li><a href="#">&gt;</a></li>';
+        $pagination .= '<li><a id="next">&gt;</a></li>';
       }
 
       $pagination .='</ul></div>';

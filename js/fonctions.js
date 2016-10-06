@@ -1,12 +1,14 @@
 function pagine(page,limit){
+  page_prec = parseInt(parseInt(page)-1);
   $.ajax({
       type: "POST",
       url: "save.php",
       data: "type=pagine&page=" + page + "&limit=" + limit,
       //dataType: 'JSON',
       success: function (data) {
-        /*alert($("#images").html());
-        alert(data);*/
+        alert($("#"+page).attr("class"))
+        $("#"+page).addClass("active");
+        $("#"+page_prec).removeClass("active");
         $("#images").html(data);
         $("img.lazy").lazyload();
         $("img.lazy").load(function(){
