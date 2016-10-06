@@ -1,8 +1,15 @@
 function enleve_active(page){
-  alert(page);
   $.each($('.pagination li a'), function(index,value){
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
       $('#'+$(this).attr('id')).removeClass('active');
+      if(page == 'previous'){
+        page_prec = parseInt(pareseInt($(this).attr('id'))-1);
+        $('#'+page_prec).addClass('active');
+      }
+      if(page == 'next'){
+        page_suiv = parseInt(pareseInt($(this).attr('id'))+1);
+        $('#'+page_suiv).addClass('active');
+      }
     }
   });
   //return id_active;
@@ -15,8 +22,11 @@ function pagine(page,limit){
       data: "type=pagine&page=" + page + "&limit=" + limit,
       //dataType: 'JSON',
       success: function (data) {
-        $("#"+page).addClass("active");
         enleve_active(page);
+        if(page != 'previous' && page != 'next'){
+          $("#"+page).addClass("active");
+        }
+
         //$("#"+page_prec).removeClass("active");
         $("#images").html(data);
         $("img.lazy").lazyload();
