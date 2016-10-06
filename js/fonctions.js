@@ -8,16 +8,19 @@ function pagine(page,limit){
         /*alert($("#images").html());
         alert(data);*/
         $("#images").html(data);
-        var $grid = $('.grid').imagesLoaded( function() {
-          $grid.masonry({
-            itemSelector: '.grid-item',
-            percentPosition: true,
-            columnWidth: '.grid-sizer'
+        $("img.lazy").lazyload();
+        $("img.lazy").load(function(){
+          var $grid = $('.grid').imagesLoaded( function() {
+            $grid.masonry({
+              itemSelector: '.grid-item',
+              percentPosition: true,
+              columnWidth: '.grid-sizer'
+            });
           });
-        });
 
-        $grid.on( 'layoutComplete', function( event, items ) {
-          modif_zoom();
+          $grid.on( 'layoutComplete', function( event, items ) {
+            modif_zoom();
+          });
         });
       },
       error: function (textStatus, errorThrown) {
