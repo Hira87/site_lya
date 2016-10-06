@@ -35,6 +35,55 @@ $pdo = new PDO('mysql:host=localhost;dbname=site_lya', 'Florian', 'EWapCk5yn-YcQ
 
     <h1>&nbsp;</h1>
 
+    <?php
+      $sql_pagination = "Select count(1) from images";
+      $res_pagination = $pdo->query($sql_pagination);
+      $nb_images = $res_pagination->rowCount();
+      $nb_pages = ceil($nb_images/30);
+      if($nb_pages>2){
+        $type_pagination = "FULL";
+      }else if($nb_pages>1){
+        $type_pagination = "SMALL";
+      }else{
+        $type_pagination = "NONE";
+      }
+
+      $pagination = '<ul class="pagination">';
+
+      if($type_pagination == "FULL"){
+        $pagination .= '<li><a href="#">&lt;&lt;</a></li>
+                        <li><a href="#">&lt;</a></li>';
+      }else if($type_pagination == "SMALL") {
+        $pagination .= '<li><a href="#">&lt;</a></li>';
+      }
+
+      for($i=1;$i<=$nb_pages;$i++){
+        $pagination .= '<li><a href="#">'.$i.'</a></li>';
+      }
+
+      if($type_pagination == "FULL"){
+        $pagination .= '<li><a href="#">&gt;</a></li>
+                        <li><a href="#">&gt;&gt;</a></li>';
+      }else if($type_pagination == "SMALL") {
+        $pagination .= '<li><a href="#">&gt;</a></li>';
+      }
+
+      $pagination .='</ul>';
+
+      echo $pagination;
+    ?>
+
+      <li><a href="#">«</a></li>
+      <li><a href="#">1</a></li>
+      <li><a class="active" href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">6</a></li>
+      <li><a href="#">7</a></li>
+      <li><a href="#">»</a></li>
+    </ul>
+
       <div class="grid">
         <div class="bord"></div>
         <div class="grid-sizer"></div>
