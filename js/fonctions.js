@@ -1,4 +1,5 @@
 function enleve_active(page){
+  alert(page);
   $.each($('.pagination li a'), function(index,value){
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
       $('#'+$(this).attr('id')).removeClass('active');

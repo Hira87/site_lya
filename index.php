@@ -54,7 +54,7 @@
 
       if($type_pagination == "FULL"){
         $pagination .= '<li><a id="first" onclick="pagine(1,'.$limit.')">&lt;&lt;</a></li>
-                        <li><a id="previous">&lt;</a></li>';
+                        <li><a id="previous" onclick="pagine(this.id,'.$limit.')">&lt;</a></li>';
       }else if($type_pagination == "SMALL") {
         $pagination .= '<li><a id="previous">&lt;</a></li>';
       }
