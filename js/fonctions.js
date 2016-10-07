@@ -20,7 +20,7 @@ function enleve_active(page){
 function recherche_page_active(page){
   $.each($('.pagination li a'), function(index,value){
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
-      return $(this).attr('id');
+      return false;
     }
   });
   //return id_active;
