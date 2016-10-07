@@ -18,11 +18,11 @@ function enleve_active(page){
 }
 
 function recherche_page_active(page){
-  $.each($('.pagination li a'), function(index,value){
+  $.each($('.pagination li a'){
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
-      return false;
+      return $(this).attr('id');
     }
-  });
+  }
   //return id_active;
 }
 
