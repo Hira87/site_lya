@@ -17,7 +17,17 @@ function enleve_active(page){
   //return id_active;
 }
 
+function recherche_page_active(page){
+  $.each($('.pagination li a'), function(index,value){
+    if($(this).attr('class') == 'active' && $(this).attr('id') != page){
+      return $(this).attr('id');
+    }
+  });
+  //return id_active;
+}
+
 function pagine(page,limit){
+  alert(recherche_page_active(page));
   $.ajax({
       type: "POST",
       url: "save.php",
