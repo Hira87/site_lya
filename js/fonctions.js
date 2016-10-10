@@ -20,6 +20,7 @@ function enleve_active(page){
 function recherche_page_active(page){
   $.each($('.pagination li a'), function(index,value){
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
+      alert($(this).attr('id'));
       return false;
     }
   });
@@ -27,8 +28,7 @@ function recherche_page_active(page){
 }
 
 function pagine(page,limit){
-  /*var new_page = recherche_page_active(page);
-  alert(new_page);*/
+  recherche_page_active(page);
   $.ajax({
       type: "POST",
       url: "save.php",
