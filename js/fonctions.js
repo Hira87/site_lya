@@ -18,17 +18,19 @@ function enleve_active(page){
 }
 
 function recherche_page_active(page){
+  page_active = '';
   $.each($('.pagination li a'), function(index,value){
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
-      alert($(this).attr('id'));
-      return false;
+      page_active = $(this).attr('id');
     }
   });
+  return page_active;
   //return id_active;
 }
 
 function pagine(page,limit){
-  recherche_page_active(page);
+  res = recherche_page_active(page);
+  alert(res);
   $.ajax({
       type: "POST",
       url: "save.php",
