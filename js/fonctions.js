@@ -21,7 +21,13 @@ function recherche_page_active(page){
   page_active = '';
   $.each($('.pagination li a'), function(index,value){
     if($(this).attr('class') == 'active' && $(this).attr('id') != page){
-      page_active = $(this).attr('id');
+      page_active = parseInt($(this).attr('id'));
+      if(page == 'previous'){
+        page_active--;
+      }
+      if(page == 'next'){
+        page_active++;
+      }
     }
   });
   return page_active;
